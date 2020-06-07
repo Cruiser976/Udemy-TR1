@@ -16,7 +16,7 @@ namespace Udemy_TR1
 
             //Adidtion
             Console.WriteLine("Addition (+): Das Ergebnis lautet: " +(ErgebnisAddition=Zahl1+Zahl2) );
-
+            Console.WriteLine("\n\n(Taste drücken um Programm zu beenden)"); Console.ReadKey();
         }
     }
 }
