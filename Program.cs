@@ -10,26 +10,36 @@ namespace Udemy_TR1
     {
         static void Main(string[] args)
         {
-            //wandelt Text in Double
-            double Zahl1, Zahl2, ErgebnisAddition;
-            Console.Write("Gebe bitte die 1. Zahl ein: "); Zahl1 = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Gebe bitte die 2. Zahl ein: "); Zahl2 = Convert.ToDouble(Console.ReadLine());
+            //Benutzereingabe 2er Zahlen als String -> wandelt Text in Double
+            double Zahl1, Zahl2, ErgebnisAddition, ErgebnisSubtraktion;
+            Zahl1 = Convert.ToDouble(HoleBenutzereingabe("Gebe bitte den ersten Summanden ein: "));
+            Zahl2 = Convert.ToDouble(HoleBenutzereingabe("Gebe bitte den zweiten Summanden ein: "));
 
             //Addition zweier Werte
             Console.WriteLine("Addition (+): Das Ergebnis lautet: " + (ErgebnisAddition = Addiere(Zahl1,Zahl2)));
-            WarteAufBenutzerEingabe();
-        }
+            HoleBenutzereingabe("\n\n(Enter drücken um Programm zu beenden)");
 
+            //Subtraktion zweier Werte
+            Console.WriteLine("Subtraktion (-): Das Ergebnis lautet: " + (ErgebnisSubtraktion = Subtrahiere(Zahl1, Zahl2)));
+            HoleBenutzereingabe("\n\n(Enter drücken um Programm zu beenden)");
+        }
+        static string HoleBenutzereingabe(string EingabeText)           /////HoleBenutzereingabe
+        {
+            Console.Write(EingabeText);
+            string Eingabe = Console.ReadLine();
+            return (Eingabe);
+        }
         static double Addiere(double Zahl1intern, double Zahl2intern)
         {
             double ErgebnisAdditionIntern = Zahl1intern + Zahl2intern;
             return (ErgebnisAdditionIntern);
         }
 
-        static void WarteAufBenutzerEingabe()
+        static double Subtrahiere (double Zahl1intern, double Zahl2intern)
         {
-            Console.WriteLine("\n\n(Enter drücken um Programm zu beenden)");
-            Console.ReadLine();
+            double ErgebnisSubtraktionIntern = Zahl1intern - Zahl2intern;
+            return (ErgebnisSubtraktionIntern);
         }
+        
     }
 }
